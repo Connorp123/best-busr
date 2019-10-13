@@ -33,6 +33,7 @@ import android.nfc.tech.MifareClassic
 import android.nfc.tech.MifareUltralight
 import android.nfc.tech.NfcF
 import android.os.Bundle
+import android.util.Log
 import com.cantrowitz.rxbroadcast.RxBroadcast
 import com.busboard.busboard.core.rx.LastValueRelay
 import io.reactivex.Observable
@@ -53,6 +54,7 @@ class NfcStream(private val activity: Activity) {
     private val relay = LastValueRelay.create<Tag>()
 
     fun onCreate(activity: Activity, savedInstanceState: Bundle?) {
+        Log.d("NFC", "NfcStream onCreate")
         if (savedInstanceState == null) {
             activity.intent.getParcelableExtra<Tag>(INTENT_EXTRA_TAG)?.let {
                 relay.accept(it)
@@ -61,6 +63,7 @@ class NfcStream(private val activity: Activity) {
     }
 
     fun onResume() {
+        Log.d("NFC", "NfcStream onResume")
         val intent = Intent(ACTION)
         intent.`package` = activity.packageName
 
@@ -70,11 +73,13 @@ class NfcStream(private val activity: Activity) {
     }
 
     fun onPause() {
+        Log.d("NFC", "NfcStream onPause")
         val nfcAdapter = NfcAdapter.getDefaultAdapter(activity)
         nfcAdapter?.disableForegroundDispatch(activity)
     }
 
     fun observe(): Observable<Tag> {
+        Log.d("NFC", "NfcStream observe")
         val broadcastIntents = RxBroadcast.fromBroadcast(activity, IntentFilter(ACTION))
                 .map { it.getParcelableExtra<Tag>(INTENT_EXTRA_TAG) }
         return Observable.merge(relay, broadcastIntents)
