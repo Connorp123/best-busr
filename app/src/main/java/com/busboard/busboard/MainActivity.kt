@@ -126,11 +126,14 @@ class MainActivity : AppCompatActivity() {
                                     .document(tripTimestamp).set(tripData)
 
                             }
-
                         }
                     }
 
+<<<<<<< HEAD
+                    Log.d("NFC", transitInfo?.getSerialNumber())
+=======
 
+>>>>>>> 7701c77028fab14b028a07097842644ee02e3662
 
 
                     Log.d("NFC", transitInfo?.getSerialNumber())
