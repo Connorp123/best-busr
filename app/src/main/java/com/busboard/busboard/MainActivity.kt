@@ -28,30 +28,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         this.nfcStream.onCreate(this, savedInstanceState)
 
-
         // Firestore
         // Access a Cloud Firestore instance from your Activity
         val db = FirebaseFirestore.getInstance()
 
+        // Create this user in the database
+        val cardID = "123"
+        val newUser = db.collection("users")
+                .document(cardID)
 
-        // Create a new user with a first and last name
-        val user = hashMapOf(
-                "card" to "1234",
-                "balance" to "12",
-                "numTrips" to 3
-//                "trips" to userTrips
-
+        // Add trips to this user
+        val tripID = "12345352321"
+        val tripData = hashMapOf(
+                "cost" to 2.75,
+                "type" to "Bus",
+                "transitSystem" to "King County Metro Transit",
+                "transitLine" to "Coach #3699",
+                "date" to "10-03-2019",
+                "startTime" to "14:32"
         )
 
-        // Add a new document with a generated ID
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("firestore", "DocumentSnapshot added with ID: ${documentReference.id}")
-                }
-                .addOnFailureListener { e ->
-                    Log.w("firestore", "Error adding document", e)
-                }
+        val trip = newUser.collection("trips")
+                .document(tripID)
+
+        trip.set(tripData)
     }
 
     override fun onResume() {
