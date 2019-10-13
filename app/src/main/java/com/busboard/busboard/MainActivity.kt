@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val transitFactoryRegistry: TransitFactoryRegistry
 
 
-    var array = arrayOf("Melbourne", "Vienna", "Vancouver", "Toronto", "Calgary", "Adelaide", "Perth", "Auckland", "Helsinki", "Hamburg", "Munich", "New York", "Sydney", "Paris", "Cape Town", "Barcelona", "London", "Bangkok")
+    var array = arrayOf("Melbourne", "Test")
 
     init {
         val tagReaderFactory = TagReaderFactory()
@@ -91,11 +91,11 @@ class MainActivity : AppCompatActivity() {
                 try {
                     val card = rawCard.parse()
                     val transitInfo = transitFactoryRegistry.parseTransitInfo(card)
-
                     val db = FirebaseFirestore.getInstance()
 
                     val userID = transitInfo?.getSerialNumber()
                     if (userID != null) {
+//                        array.clear()
                         val user = db.collection("users").document(userID)
 
                         val trips = transitInfo?.getTrips()
@@ -115,10 +115,15 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
+<<<<<<< HEAD
                     Log.d("NFC", transitInfo?.getSerialNumber())
+=======
 
+>>>>>>> 7701c77028fab14b028a07097842644ee02e3662
+
+
+                    Log.d("NFC", transitInfo?.getSerialNumber())
                 } catch (ex: Exception) {
-//                    e.onError(ex)
                     Log.d("NFC", "data parse exception")
                 }
 
