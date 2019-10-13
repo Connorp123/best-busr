@@ -20,11 +20,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.key;
+package com.busboard.busboard.key;
 
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.card.CardType;
+import com.busboard.busboard.card.CardType;
 
 public interface CardKeys {
 

@@ -21,14 +21,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.transit;
+package com.busboard.busboard.transit;
 
 import android.content.Context;
 import android.content.res.Resources;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.codebutler.farebot.base.ui.FareBotUiTree;
+import com.busboard.busboard.base.ui.FareBotUiTree;
 
 import java.util.List;
 

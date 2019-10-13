@@ -20,20 +20,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.desfire;
+package com.busboard.busboard.card.desfire;
 
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.codebutler.farebot.card.TagReader;
-import com.codebutler.farebot.card.desfire.raw.RawDesfireApplication;
-import com.codebutler.farebot.card.desfire.raw.RawDesfireCard;
-import com.codebutler.farebot.card.desfire.raw.RawDesfireFile;
-import com.codebutler.farebot.card.desfire.raw.RawDesfireFileSettings;
-import com.codebutler.farebot.card.desfire.raw.RawDesfireManufacturingData;
-import com.codebutler.farebot.key.CardKeys;
+import com.busboard.busboard.card.TagReader;
+import com.busboard.busboard.card.desfire.raw.RawDesfireApplication;
+import com.busboard.busboard.card.desfire.raw.RawDesfireCard;
+import com.busboard.busboard.card.desfire.raw.RawDesfireFile;
+import com.busboard.busboard.card.desfire.raw.RawDesfireFileSettings;
+import com.busboard.busboard.card.desfire.raw.RawDesfireManufacturingData;
+import com.busboard.busboard.key.CardKeys;
 
 import java.io.IOException;
 import java.security.AccessControlException;
@@ -41,11 +41,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.BACKUP_DATA_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.CYCLIC_RECORD_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.LINEAR_RECORD_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.STANDARD_DATA_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.VALUE_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.BACKUP_DATA_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.CYCLIC_RECORD_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.LINEAR_RECORD_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.STANDARD_DATA_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.VALUE_FILE;
 
 public class DesfireTagReader extends TagReader<IsoDep, RawDesfireCard, CardKeys> {
 

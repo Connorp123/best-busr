@@ -21,16 +21,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.desfire;
+package com.busboard.busboard.card.desfire;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.codebutler.farebot.base.ui.FareBotUiTree;
-import com.codebutler.farebot.base.util.ByteArray;
-import com.codebutler.farebot.card.Card;
-import com.codebutler.farebot.card.CardType;
+import com.busboard.busboard.base.ui.FareBotUiTree;
+import com.busboard.busboard.base.util.ByteArray;
+import com.busboard.busboard.card.Card;
+import com.busboard.busboard.card.CardType;
 import com.google.auto.value.AutoValue;
 
 import java.util.Date;

@@ -20,11 +20,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.desfire;
+package com.busboard.busboard.card.desfire;
 
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.base.util.ByteUtils;
+import com.busboard.busboard.base.util.ByteUtils;
 import com.google.auto.value.AutoValue;
 
 import java.io.ByteArrayInputStream;

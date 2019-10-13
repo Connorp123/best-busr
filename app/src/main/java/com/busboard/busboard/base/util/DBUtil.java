@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.base.util;
+package com.busboard.busboard.base.util;
 
 import android.content.Context;
 import android.database.SQLException;

@@ -20,11 +20,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.serialize;
+package com.busboard.busboard.card.serialize;
 
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.card.RawCard;
+import com.busboard.busboard.card.RawCard;
 
 public interface CardSerializer {
 

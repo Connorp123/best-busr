@@ -20,15 +20,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card;
+package com.busboard.busboard.card;
 
 import android.nfc.Tag;
 import android.nfc.tech.TagTechnology;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.codebutler.farebot.base.util.IOUtils;
-import com.codebutler.farebot.key.CardKeys;
+import com.busboard.busboard.base.util.IOUtils;
+import com.busboard.busboard.key.CardKeys;
 
 public abstract class TagReader<
         T extends TagTechnology,

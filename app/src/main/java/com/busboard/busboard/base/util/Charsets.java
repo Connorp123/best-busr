@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.codebutler.farebot.base.util;
+package com.busboard.busboard.base.util;
 
 import java.nio.charset.Charset;
 import java.util.Collections;

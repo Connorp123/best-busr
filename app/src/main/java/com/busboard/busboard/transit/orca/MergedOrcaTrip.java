@@ -20,19 +20,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.transit.orca;
+package com.busboard.busboard.transit.orca;
 
 import android.content.res.Resources;
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.transit.Station;
-import com.codebutler.farebot.transit.Trip;
+import com.busboard.busboard.transit.Station;
+import com.busboard.busboard.transit.Trip;
 import com.google.auto.value.AutoValue;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import static com.codebutler.farebot.transit.orca.OrcaData.TRANS_TYPE_CANCEL_TRIP;
+import static com.busboard.busboard.transit.orca.OrcaData.TRANS_TYPE_CANCEL_TRIP;
 
 @AutoValue
 public abstract class MergedOrcaTrip extends Trip {

@@ -21,7 +21,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.transit;
+package com.busboard.busboard.transit;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

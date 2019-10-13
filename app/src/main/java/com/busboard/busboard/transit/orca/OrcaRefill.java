@@ -20,13 +20,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.transit.orca;
+package com.busboard.busboard.transit.orca;
 
 import android.content.res.Resources;
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.card.desfire.DesfireRecord;
-import com.codebutler.farebot.transit.Refill;
+import com.busboard.busboard.card.desfire.DesfireRecord;
+import com.busboard.busboard.transit.Refill;
 import com.google.auto.value.AutoValue;
 
 import java.text.NumberFormat;

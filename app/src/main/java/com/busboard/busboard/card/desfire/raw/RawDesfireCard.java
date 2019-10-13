@@ -20,15 +20,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.desfire.raw;
+package com.busboard.busboard.card.desfire.raw;
 
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.base.util.ByteArray;
-import com.codebutler.farebot.card.CardType;
-import com.codebutler.farebot.card.RawCard;
-import com.codebutler.farebot.card.desfire.DesfireApplication;
-import com.codebutler.farebot.card.desfire.DesfireCard;
+import com.busboard.busboard.base.util.ByteArray;
+import com.busboard.busboard.card.CardType;
+import com.busboard.busboard.card.RawCard;
+import com.busboard.busboard.card.desfire.DesfireApplication;
+import com.busboard.busboard.card.desfire.DesfireCard;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
 import com.google.gson.Gson;

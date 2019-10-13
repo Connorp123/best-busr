@@ -1,8 +1,8 @@
-package com.codebutler.farebot.transit;
+package com.busboard.busboard.transit;
 
 import androidx.annotation.NonNull;
 
-import com.codebutler.farebot.card.Card;
+import com.busboard.busboard.card.Card;
 
 public interface TransitFactory<C extends Card, T extends TransitInfo> {
 

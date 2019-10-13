@@ -20,28 +20,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.desfire.raw;
+package com.busboard.busboard.card.desfire.raw;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.codebutler.farebot.base.util.ByteArray;
-import com.codebutler.farebot.card.desfire.DesfireFile;
-import com.codebutler.farebot.card.desfire.DesfireFileSettings;
-import com.codebutler.farebot.card.desfire.InvalidDesfireFile;
-import com.codebutler.farebot.card.desfire.RecordDesfireFile;
-import com.codebutler.farebot.card.desfire.StandardDesfireFile;
-import com.codebutler.farebot.card.desfire.UnauthorizedDesfireFile;
-import com.codebutler.farebot.card.desfire.ValueDesfireFile;
+import com.busboard.busboard.base.util.ByteArray;
+import com.busboard.busboard.card.desfire.DesfireFile;
+import com.busboard.busboard.card.desfire.DesfireFileSettings;
+import com.busboard.busboard.card.desfire.InvalidDesfireFile;
+import com.busboard.busboard.card.desfire.RecordDesfireFile;
+import com.busboard.busboard.card.desfire.StandardDesfireFile;
+import com.busboard.busboard.card.desfire.UnauthorizedDesfireFile;
+import com.busboard.busboard.card.desfire.ValueDesfireFile;
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.BACKUP_DATA_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.CYCLIC_RECORD_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.LINEAR_RECORD_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.STANDARD_DATA_FILE;
-import static com.codebutler.farebot.card.desfire.DesfireFileSettings.VALUE_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.BACKUP_DATA_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.CYCLIC_RECORD_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.LINEAR_RECORD_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.STANDARD_DATA_FILE;
+import static com.busboard.busboard.card.desfire.DesfireFileSettings.VALUE_FILE;
 
 @AutoValue
 public abstract class RawDesfireFile {

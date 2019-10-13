@@ -1,4 +1,4 @@
-package com.codebutler.farebot.card.desfire;
+package com.busboard.busboard.card.desfire;
 
 import androidx.annotation.NonNull;
 

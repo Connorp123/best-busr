@@ -23,14 +23,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.transit.orca;
+package com.busboard.busboard.transit.orca;
 
 import android.content.res.Resources;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.codebutler.farebot.transit.Subscription;
-import com.codebutler.farebot.transit.TransitInfo;
+import com.busboard.busboard.transit.Subscription;
+import com.busboard.busboard.transit.TransitInfo;
 import com.google.auto.value.AutoValue;
 
 import java.text.NumberFormat;

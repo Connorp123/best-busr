@@ -21,13 +21,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.codebutler.farebot.card.desfire;
+package com.busboard.busboard.card.desfire;
 
 import android.nfc.tech.IsoDep;
 
-import com.codebutler.farebot.card.desfire.raw.RawDesfireFileSettings;
-import com.codebutler.farebot.card.desfire.raw.RawDesfireManufacturingData;
-import com.codebutler.farebot.base.util.ByteUtils;
+import com.busboard.busboard.card.desfire.raw.RawDesfireFileSettings;
+import com.busboard.busboard.card.desfire.raw.RawDesfireManufacturingData;
+import com.busboard.busboard.base.util.ByteUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.security.AccessControlException;

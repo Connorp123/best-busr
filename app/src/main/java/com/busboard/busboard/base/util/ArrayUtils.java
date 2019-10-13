@@ -1,4 +1,4 @@
-package com.codebutler.farebot.base.util;
+package com.busboard.busboard.base.util;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

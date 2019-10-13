@@ -1,4 +1,4 @@
-package com.codebutler.farebot.base.ui;
+package com.busboard.busboard.base.ui;
 
 import android.content.Context;
 import androidx.annotation.Nullable;
