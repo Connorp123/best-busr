@@ -55,6 +55,41 @@ class MainActivity : AppCompatActivity() {
                 .document(tripID)
 
         trip.set(tripData)
+
+
+        // NEW
+
+        // Create a map with userID, trips
+        val userTripsMap = hashMapOf<String, Int>()
+
+        // Get list of all user references
+        db.collection("users")
+                .get()
+                .addOnSuccessListener { result ->
+
+                    // For each user
+                    for (user in result) {
+
+                        // Count the number of trips
+                        user.reference.collection("trips").get()
+                                .addOnSuccessListener { res ->
+
+                                    // Add a map entry with this user id and trips
+                                    userTripsMap[user.id] = res.documents.size
+                                }
+                                .addOnFailureListener { exception ->
+                                    Log.d("firestore", "Error getting documents: ", exception)
+                                }
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d("firestore", "Error getting documents: ", exception)
+                }
+
+        // Sort the map in decr order by num trips
+        val sortedUsers = userTripsMap.toList().sortedBy { (_, value) -> value}.toMap()
+
+        // Display the list
     }
 
     override fun onResume() {
