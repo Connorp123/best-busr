@@ -10,6 +10,9 @@ import com.busboard.busboard.core.nfc.TagReaderFactory
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.android.schedulers.AndroidSchedulers
 
+// Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+
 class MainActivity : AppCompatActivity() {
 
     private val nfcStream: NfcStream
@@ -25,6 +28,31 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         this.nfcStream.onCreate(this, savedInstanceState)
+
+
+        // Firestore
+        // Access a Cloud Firestore instance from your Activity
+        val db = FirebaseFirestore.getInstance()
+
+
+        // Create a new user with a first and last name
+        val user = hashMapOf(
+                "card" to "1234",
+                "balance" to "12",
+                "numTrips" to 3
+//                "trips" to userTrips
+
+        )
+
+        // Add a new document with a generated ID
+        db.collection("users")
+                .add(user)
+                .addOnSuccessListener { documentReference ->
+                    Log.d("firestore", "DocumentSnapshot added with ID: ${documentReference.id}")
+                }
+                .addOnFailureListener { e ->
+                    Log.w("firestore", "Error adding document", e)
+                }
     }
 
     override fun onResume() {
@@ -37,6 +65,7 @@ class MainActivity : AppCompatActivity() {
             .subscribe { card ->
                 Log.d("NFC data", card.toString())
             }
+
     }
 
     override fun onPause() {

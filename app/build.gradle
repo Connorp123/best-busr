@@ -53,9 +53,8 @@ dependencies {
     // Firebase
     implementation 'com.google.firebase:firebase-analytics:17.2.0' // Firebase SDK for GA
     implementation 'com.google.firebase:firebase-firestore:21.1.1' // Cloud Firestore Android library
-
-    // add SDKs for any other desired Firebase products
-    // https://firebase.google.com/docs/android/setup#available-libraries
+//    implementation 'com.firebaseui:firebase-ui-auth:4.3.1' // Firebase authentication drop-in solution
+//    implementation 'com.facebook.android:facebook-android-sdk:5.8.0' // Facebook login
 }
 
 // Firebase
