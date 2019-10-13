@@ -49,4 +49,14 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
     implementation 'com.jakewharton.rxrelay2:rxrelay:2.1.0'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.0' // Firebase SDK for GA
+    implementation 'com.google.firebase:firebase-firestore:21.1.1' // Cloud Firestore Android library
+
+    // add SDKs for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
 }
+
+// Firebase
+apply plugin: 'com.google.gms.google-services'
