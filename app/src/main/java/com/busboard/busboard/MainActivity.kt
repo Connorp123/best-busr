@@ -9,6 +9,8 @@ import com.busboard.busboard.farebot.core.nfc.TagReaderFactory
 import com.codebutler.farebot.app.core.transit.TransitFactoryRegistry
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 // Firebase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,6 +20,9 @@ class MainActivity : AppCompatActivity() {
     private val nfcStream: NfcStream
     private val cardStream: CardStream
     private val transitFactoryRegistry: TransitFactoryRegistry
+
+
+    var array = arrayOf("Melbourne", "Vienna", "Vancouver", "Toronto", "Calgary", "Adelaide", "Perth", "Auckland", "Helsinki", "Hamburg", "Munich", "New York", "Sydney", "Paris", "Cape Town", "Barcelona", "London", "Bangkok")
 
     init {
         val tagReaderFactory = TagReaderFactory()
@@ -31,30 +36,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         this.nfcStream.onCreate(this, savedInstanceState)
 
-        // Firestore
-        // Access a Cloud Firestore instance from your Activity
-        val db = FirebaseFirestore.getInstance()
+        val adapter = ArrayAdapter(this,
+            R.layout.listview_item, array)
 
-        // Create this user in the database
-        val cardID = "123"
-        val newUser = db.collection("users")
-                .document(cardID)
-
-        // Add trips to this user
-        val tripID = "12345352321"
-        val tripData = hashMapOf(
-                "cost" to 2.75,
-                "type" to "Bus",
-                "transitSystem" to "King County Metro Transit",
-                "transitLine" to "Coach #3699",
-                "date" to "10-03-2019",
-                "startTime" to "14:32"
-        )
-
-        val trip = newUser.collection("trips")
-                .document(tripID)
-
-        trip.set(tripData)
+        val listView:ListView = findViewById(R.id.listview_1)
+        listView.setAdapter(adapter)
     }
 
     override fun onResume() {
@@ -68,7 +54,31 @@ class MainActivity : AppCompatActivity() {
                 try {
                     val card = rawCard.parse()
                     val transitInfo = transitFactoryRegistry.parseTransitInfo(card)
-                    val trips = transitInfo?.trips
+
+                    val db = FirebaseFirestore.getInstance()
+
+                    val userID = transitInfo?.getSerialNumber()
+                    if (userID != null) {
+                        val user = db.collection("users").document(userID)
+
+                        val trips = transitInfo?.getTrips()
+
+                        if (trips != null) {
+                            for (trip in trips) {
+                                val tripTimestamp = trip.getTimestamp().toString()
+                                val tripData = hashMapOf(
+                                    "time" to tripTimestamp
+//                                    "balance" to trip.getBalanceString()
+                                )
+
+                                user.collection("trips")
+                                    .document(tripTimestamp).set(tripData)
+
+                            }
+
+                        }
+                    }
+
 
                     Log.d("NFC", transitInfo?.getSerialNumber())
 
