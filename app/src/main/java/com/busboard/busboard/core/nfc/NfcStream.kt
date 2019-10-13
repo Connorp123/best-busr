@@ -45,10 +45,11 @@ class NfcStream(private val activity: Activity) {
         private val INTENT_EXTRA_TAG = "android.nfc.extra.TAG"
 
         private val TECH_LISTS = arrayOf(
-                arrayOf(IsoDep::class.java.name),
-                arrayOf(MifareClassic::class.java.name),
-                arrayOf(MifareUltralight::class.java.name),
-                arrayOf(NfcF::class.java.name))
+            arrayOf(IsoDep::class.java.name),
+            arrayOf(MifareClassic::class.java.name),
+            arrayOf(MifareUltralight::class.java.name),
+            arrayOf(NfcF::class.java.name)
+        )
     }
 
     private val relay = LastValueRelay.create<Tag>()
@@ -81,7 +82,7 @@ class NfcStream(private val activity: Activity) {
     fun observe(): Observable<Tag> {
         Log.d("NFC", "NfcStream observe")
         val broadcastIntents = RxBroadcast.fromBroadcast(activity, IntentFilter(ACTION))
-                .map { it.getParcelableExtra<Tag>(INTENT_EXTRA_TAG) }
+            .map { it.getParcelableExtra<Tag>(INTENT_EXTRA_TAG) }
         return Observable.merge(relay, broadcastIntents)
     }
 }
