@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "326272980759",
+    "firebase_url": "https://bus-board-dh.firebaseio.com",
+    "project_id": "bus-board-dh",
+    "storage_bucket": "bus-board-dh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326272980759:android:ec050a771093fb5edd4952",
+        "android_client_info": {
+          "package_name": "com.busboard.busboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326272980759-jk7cve7s3shp3jbv7m4f2u241e303j4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn9shnpSDMWLlhWlY08-Qiqoogwb4ewSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326272980759-jk7cve7s3shp3jbv7m4f2u241e303j4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
