@@ -44,4 +44,8 @@ dependencies {
 
     annotationProcessor("com.ryanharter.auto.value:auto-value-gson:1.0.0")
     implementation("com.ryanharter.auto.value:auto-value-gson-runtime:1.0.0")
+
+    implementation 'com.cantrowitz:rxbroadcast:2.0.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.1.0'
 }
