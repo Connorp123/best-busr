@@ -39,6 +39,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Map;
 
+import com.busboard.busboard.R;
+
 @AutoValue
 public abstract class OrcaTrip extends Trip {
 

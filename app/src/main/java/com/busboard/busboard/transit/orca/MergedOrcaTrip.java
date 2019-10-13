@@ -32,6 +32,8 @@ import com.google.auto.value.AutoValue;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import com.busboard.busboard.R;
+
 import static com.busboard.busboard.transit.orca.OrcaData.TRANS_TYPE_CANCEL_TRIP;
 
 @AutoValue

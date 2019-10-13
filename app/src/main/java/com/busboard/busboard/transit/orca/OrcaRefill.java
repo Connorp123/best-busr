@@ -23,6 +23,7 @@
 package com.busboard.busboard.transit.orca;
 
 import android.content.res.Resources;
+
 import androidx.annotation.NonNull;
 
 import com.busboard.busboard.card.desfire.DesfireRecord;
@@ -31,6 +32,8 @@ import com.google.auto.value.AutoValue;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+
+import com.busboard.busboard.R;
 
 @AutoValue
 public abstract class OrcaRefill extends Refill {
