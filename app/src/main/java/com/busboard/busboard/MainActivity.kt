@@ -2,6 +2,7 @@ package com.busboard.busboard
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Adapter
 import androidx.appcompat.app.AppCompatActivity
 import com.busboard.busboard.farebot.core.nfc.CardStream
 import com.busboard.busboard.farebot.core.nfc.NfcStream
@@ -21,8 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val cardStream: CardStream
     private val transitFactoryRegistry: TransitFactoryRegistry
 
-
-    var array = arrayOf("Melbourne", "Test")
+    var array = arrayOf(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ")
 
     init {
         val tagReaderFactory = TagReaderFactory()
@@ -49,14 +49,14 @@ class MainActivity : AppCompatActivity() {
         db.collection("users")
                 .get()
                 .addOnSuccessListener { result ->
-
+                    Log.d("DB", "Got all users")
                     // For each user
                     for (user in result) {
 
                         // Count the number of trips
                         user.reference.collection("trips").get()
                                 .addOnSuccessListener { res ->
-
+                                    Log.d("DB", "Got user"+res.toString())
                                     // Add a map entry with this user id and trips
                                     userTripsMap[user.id] = res.documents.size
                                 }
@@ -73,11 +73,24 @@ class MainActivity : AppCompatActivity() {
         val sortedUsers = userTripsMap.toList().sortedBy { (_, value) -> value}.toMap()
 
         // Display the list
-//        val adapter = ArrayAdapter(this,
-//            R.layout.listview_item, array)
-//
-//        val listView:ListView = findViewById(R.id.listview_1)
-//        listView.setAdapter(adapter)
+        val adapter = ArrayAdapter(this,
+            R.layout.listview_item, array)
+
+        val listView:ListView = findViewById(R.id.listview_1)
+        listView.setAdapter(adapter)
+
+        Log.d("DB", sortedUsers.toString())
+        var i = 0
+        for (entry in sortedUsers) {
+            Log.d("DB","Key: " + entry.key)
+            Log.d("DB"," Value: " + entry.value)
+            array.set(i, entry.key)
+            i = i + 1
+        }
+        adapter.notifyDataSetChanged()
+
+
+
     }
 
     override fun onResume() {
@@ -96,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                     val userID = transitInfo?.getSerialNumber()
                     if (userID != null) {
 //                        array.clear()
+//                        array.set(0,"New City")
                         val user = db.collection("users").document(userID)
 
                         val trips = transitInfo?.getTrips()
